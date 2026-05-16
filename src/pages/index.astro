@@ -1,0 +1,160 @@
+---
+import "@/styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procesador de CV - Informe de Selección</title>
+  </head>
+  <body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-primary">
+    <main>
+      <section class="relative overflow-hidden bg-surface px-4 py-6 sm:px-6 sm:py-10 md:px-gutter lg:py-20">
+        <div class="mx-auto grid w-full max-w-[1180px] items-stretch justify-items-center gap-5 sm:gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:justify-items-stretch">
+          <aside class="relative hidden flex-col overflow-hidden rounded-2xl border border-secondary-container bg-surface-container-lowest p-5 shadow-xl shadow-primary/5 sm:p-7 md:p-8 lg:flex lg:min-h-[560px] lg:p-10">
+            <div class="absolute inset-0 dropzone-pattern pointer-events-none rounded-2xl"></div>
+            <div class="absolute inset-x-0 top-0 h-1 bg-primary"></div>
+
+            <div class="relative z-10 flex h-full flex-col">
+              <div class="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4 lg:mb-10">
+                <div class="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:size-14 lg:size-16 lg:rounded-2xl">
+                  <span class="material-symbols-outlined text-[28px] sm:text-[32px] lg:text-[34px]">fact_check</span>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-xs font-bold uppercase tracking-[0.22em] text-primary">
+                    Proceso
+                  </p>
+                  <h2 class="mt-1 font-chivo text-xl font-black leading-tight text-on-surface sm:text-2xl">
+                    Pasos para generar el informe
+                  </h2>
+                </div>
+              </div>
+
+              <div class="grid flex-1 content-center gap-4 sm:gap-5 lg:gap-6">
+                <div class="grid grid-cols-[40px_minmax(0,1fr)] gap-4 rounded-xl border border-secondary-container bg-surface-container-low p-4 sm:grid-cols-[48px_minmax(0,1fr)] sm:gap-5 sm:p-5">
+                  <div class="grid size-10 place-items-center rounded-lg bg-primary font-chivo text-xs font-black text-white shadow-lg shadow-primary/20 sm:size-12 sm:rounded-xl sm:text-sm">
+                    1
+                  </div>
+                  <div>
+                    <h3 class="font-chivo text-base font-extrabold sm:text-lg">Sube la solicitud</h3>
+                    <p class="mt-1 text-sm leading-6 text-secondary sm:mt-2">
+                      Selecciona el PDF de solicitud de empleo.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-[40px_minmax(0,1fr)] gap-4 rounded-xl border border-secondary-container bg-surface-container-low p-4 sm:grid-cols-[48px_minmax(0,1fr)] sm:gap-5 sm:p-5">
+                  <div class="grid size-10 place-items-center rounded-lg bg-primary font-chivo text-xs font-black text-white shadow-lg shadow-primary/20 sm:size-12 sm:rounded-xl sm:text-sm">
+                    2
+                  </div>
+                  <div>
+                    <h3 class="font-chivo text-base font-extrabold sm:text-lg">Procesa los datos</h3>
+                    <p class="mt-1 text-sm leading-6 text-secondary sm:mt-2">
+                      La app lee campos, tablas y experiencia laboral.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-[40px_minmax(0,1fr)] gap-4 rounded-xl border border-secondary-container bg-surface-container-low p-4 sm:grid-cols-[48px_minmax(0,1fr)] sm:gap-5 sm:p-5">
+                  <div class="grid size-10 place-items-center rounded-lg bg-primary font-chivo text-xs font-black text-white shadow-lg shadow-primary/20 sm:size-12 sm:rounded-xl sm:text-sm">
+                    3
+                  </div>
+                  <div>
+                    <h3 class="font-chivo text-base font-extrabold sm:text-lg">Descarga el Word</h3>
+                    <p class="mt-1 text-sm leading-6 text-secondary sm:mt-2">
+                      Se genera el informe con la plantilla corporativa.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <form class="flex w-full max-w-2xl flex-col lg:max-w-none" data-report-form>
+            <div class="group relative flex flex-1">
+              <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-primary opacity-10"></div>
+
+              <div
+                class="relative flex w-full flex-col justify-center rounded-2xl border-2 border-dashed border-primary/20 bg-white p-5 text-center transition-all duration-500 cv-preview-shadow group-hover:border-primary/50 group-hover:shadow-2xl sm:p-8 md:p-10 lg:min-h-[560px] lg:p-14"
+              >
+                <input
+                  id="pdfInput"
+                  data-pdf-input
+                  class="sr-only"
+                  type="file"
+                  accept="application/pdf"
+                />
+
+                <div class="dropzone-pattern pointer-events-none absolute inset-0 rounded-2xl"></div>
+
+                <label class="relative z-10 flex cursor-pointer flex-col items-center" for="pdfInput">
+                  <div class="mb-6 inline-flex size-20 rotate-3 items-center justify-center rounded-2xl bg-primary-container text-on-primary-container shadow-lg transition-transform duration-300 group-hover:rotate-0 sm:mb-8 sm:size-24">
+                    <span class="material-symbols-outlined text-[44px] sm:text-[52px]">upload_file</span>
+                  </div>
+
+                  <h2 class="mb-3 font-chivo text-2xl font-extrabold leading-tight text-on-surface sm:text-[28px]">
+                    Sube tu CV para analizar
+                  </h2>
+                  <p class="mb-7 font-hanken text-sm leading-6 text-secondary sm:mb-10 sm:text-base">
+                    Generación de informe profesional instantáneo
+                  </p>
+
+                  <div class="mb-7 flex w-full items-center gap-3 rounded-xl border border-outline-variant/50 bg-surface-container-lowest p-4 text-left transition-transform group-hover:scale-[1.02] sm:mb-8 sm:gap-5 sm:p-5">
+                    <div class="shrink-0 rounded-lg bg-primary/10 p-3 text-primary">
+                      <span class="material-symbols-outlined">picture_as_pdf</span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <div class="truncate text-xs font-bold uppercase tracking-[0.05em] text-on-surface sm:text-sm" data-file-name>
+                        Selecciona un archivo PDF
+                      </div>
+                      <div class="text-xs font-medium text-secondary" data-file-meta>
+                        Solicitud de empleo • Informe Word
+                      </div>
+                    </div>
+                    <span class="material-symbols-outlined text-primary" data-file-status-icon>
+                      add_circle
+                    </span>
+                  </div>
+                </label>
+
+                  <button
+                    class="w-full rounded-xl bg-primary px-4 py-4 font-chivo text-xs font-black uppercase tracking-[0.14em] text-white shadow-xl shadow-primary/20 transition-all hover:-translate-y-1 hover:bg-[#930014] active:translate-y-0 disabled:cursor-progress disabled:bg-secondary disabled:shadow-none disabled:hover:translate-y-0 sm:px-6 sm:py-5 sm:text-sm sm:tracking-[0.2em]"
+                    type="submit"
+                    data-generate-button
+                  >
+                    Generar mi informe
+                  </button>
+
+                  <div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-secondary/70">
+                    <span class="flex items-center gap-1">
+                      <span class="material-symbols-outlined text-sm">verified</span>
+                      100% local
+                    </span>
+                    <span class="flex items-center gap-1">
+                      <span class="material-symbols-outlined text-sm">bolt</span>
+                      Instantáneo
+                    </span>
+                  </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-6 rounded-xl border px-4 py-3 text-sm font-semibold"
+              data-message
+              hidden
+              role="status"
+              aria-live="polite"
+            ></div>
+          </form>
+
+        </div>
+      </section>
+    </main>
+
+    <script>
+      import "@/main";
+    </script>
+  </body>
+</html>

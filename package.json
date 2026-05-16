@@ -1,0 +1,27 @@
+{
+  "name": "mapache",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "start": "astro dev --host 127.0.0.1",
+    "build": "astro check && astro build",
+    "build:pages": "npm run build",
+    "preview": "astro preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "docxtemplater": "3.47.2",
+    "file-saver": "2.0.5",
+    "pdfjs-dist": "3.11.174",
+    "pizzip": "3.2.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@tailwindcss/vite": "4.3.0",
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^25.8.0",
+    "astro": "6.3.3",
+    "tailwindcss": "4.3.0",
+    "typescript": "^6.0.3"
+  }
+}
